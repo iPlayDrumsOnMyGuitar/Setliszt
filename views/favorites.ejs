@@ -1,0 +1,65 @@
+<%- include('partials/logged-in-header') -%>
+<div class="container card-container">
+    <table class="table">
+              
+        <thead>
+          <tr>
+            <th scope="col">Song Name</th>
+            <th scope="col">Band Name</th>
+            <th scope="col">Key</th>
+            <th scope="col">BPM</th>
+          </tr>
+        </thead>
+        
+      </table>
+</div>
+<div class="container card-container">
+    
+    <h1>My Bookmarked Recipes</h1>
+  <% console.log(posts[0]) %> 
+  <div class="row row-cols-1 row-cols-md ">
+    <% for(var i=0; i<posts.length; i++) {%>
+      <%if(posts[i].bookmarks.includes(user.id)) {%>
+     <div class="col">
+      <div class="card h-100">
+        <!-- <img src="<%= posts[i].image%>" class="card-img-top" alt="..."> -->
+        <div class="card<!-- -body -->"> 
+            
+            <table class="table">
+              
+                <thead>
+                  <tr>
+                    <th scope="col">Song Name</th>
+                    <th scope="col">Band Name</th>
+                    <th scope="col">Key</th>
+                    <th scope="col">BPM</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <!-- <th scope="row">1</th> -->
+                    <td><%= posts[i].songName%></td>
+                    <td><%= posts[i].bandName%></td>
+                    <td><%= posts[i].songKey%></td>
+                    <td><%= posts[i].BPM%></td>
+                  </tr>
+                 
+                  </tr>
+                </tbody>
+              </table>
+          <!-- <h5 class="card-title"><%= posts[i].songName%></h5>
+          <p class="card-text"><%= posts[i].bandName%></p>
+          <a href="/post/<%= posts[i]._id%>" class="btn btn-primary">View Recipe</a> -->
+          <!-- <a href="/post/<%= posts[i]._id%>" class="btn btn-primary">Edit</a> -->
+        </div>
+        
+      </div>
+    </div>
+    <% } %>
+    <% } %>
+  </div>
+  
+</div>
+
+
+<%- include('partials/footer') -%>
