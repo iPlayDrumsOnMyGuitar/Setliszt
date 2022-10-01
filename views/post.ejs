@@ -2,11 +2,30 @@
 <div class="container">
   <div class="row justify-content-center mt-5">
     <div class="col-6">
-      <h2 ><%= post.songName %></h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Song Name</th>
+            <th scope="col">Band Name</th>
+            <th scope="col">Key</th>
+            <th scope="col">BPM</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <!-- <th scope="row">1</th> -->
+            <td><%= post.songName%></td>
+            <td><%= post.bandName%></td>
+            <td><%= post.songKey%></td>
+            <td><%= post.BPM%></td>
+          </tr>
+          </tbody>
+      <!-- <h2 ><%= post.songName %></h2>
       <h2><%= post.bandName %></h2>
       <h2><%= post.songKey %></h2>
       <h2><%= post.BPM %></h2>
-      <h2><%= post.tab %></h2>
+      <h2><%= post.tab %></h2> -->
+      </table>
       
       <img class="img-fluid" src="<%= post.image%>" />
       <div class="row justify-content-between">
