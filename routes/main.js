@@ -17,4 +17,5 @@ router.post("/signup", authController.postSignup);
 router.get("/my-songs", ensureAuth, postsController.getSongs);
 router.get("/bookmarks", ensureAuth, postsController.getBookmarks);
 
+
 module.exports = router;
