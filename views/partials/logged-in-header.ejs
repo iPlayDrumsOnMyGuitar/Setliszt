@@ -39,15 +39,15 @@
           <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
               <!-- <a class="btn btn-outline-dark btn-nav" href="/login" role="button">Login</a>
               <a class="btn btn-dark btn-nav" href="/signup" role="button">Sign up</a> -->
-              <span class="navbar-text h4">Hello, <%= user.userName %></span>
-              <a class="nav-link active" aria-current="page" href="/feed">Feed</a>
-              <a class="nav-link" href="/my-songs">My Songs</a>
-              <a class="nav-link" href="/profile">Add Song</a>
-              <a class="nav-link" href="/bookmarks">Setlist</a>
-              
-              <!-- <a class="btn btn-primary" href="/feed" role="button"><i class="bi bi-house-door-fill"></i></a> -->
-              <!-- <a class="btn btn-primary" href="/profile" role="button"><i class="bi bi-person-fill"></i></a> -->
-              <a href="/logout" class="btn btn-dark btn-nav" role="button">Logout</a>
+              <span class="navbar-text h3">Hello, <%= user.userName %></span>
+              <a class="nav-link active h4" aria-current="page" href="/feed">Feed</a>
+              <a class="nav-link h4" href="/my-songs">My Songs</a>
+              <a class="nav-link h4" href="/profile">Add Song</a>
+              <a class="nav-link h4" href="/bookmarks">Setlist</a>
+              <div class="m-1">
+              <a class="nav-link btn btn-dark h2 " href="/logout"  role="button"><b>Logout</b></a>
+             </div>
+            
               <!-- <button href="/login" class="btn btn-outline-dark" type="submit">Login</button> -->
               <!-- <button href="/signup" class="btn btn-dark" type="submit">Sign up</button> -->
           </div>
