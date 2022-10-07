@@ -1,32 +1,33 @@
+<body class="bg-dark">
 <%- include('partials/logged-in-header') -%>
 <div class="container">
-  <div class="row mt-5">
-      <div class="col-6">
-          <div>
+  <div class="row mt-5 d-flex justify-content-center">
+      <div class="col-6 ">
+         <!--  <div>
               <p><strong>User Name</strong>: <%= user.userName %></p>
               <p><strong>Email</strong>: <%= user.email %></p>
               <a href="/logout" class="col-3 btn btn-primary">Logout</a>
-          </div>
-          <div class="mt-5">
-            <h2>Add a Song</h2>
-            <form action="/post/createPost" enctype="multipart/form-data" method="POST">
+          </div> -->
+          <div class="mt-5 ">
+            <h1 class="d-flex justify-content-center text-light m-5">Add a Song</h1>
+            <form action="/post/createPost" enctype="multipart/form-data " method="POST">
               <div class="mb-3">
-                  <label for="songName" class="form-label">Song Name</label>
-                  <input type="text" class="form-control" id="songName" name="songName">
+                  <label for="songName" class="form-label text-light h4">Song Name</label>
+                  <input type="text" class="form-control text-dark bg-danger font-weight-bold" id="songName" name="songName" placeholder="The Macarana">
               </div>
               <!-- added -->
               <div class="mb-3">
-                <label for="bandName" class="form-label">Band Name</label>
-                <input type="text" class="form-control" id="bandName" name="bandName">
+                <label for="bandName" class="form-label text-light h4">Band Name</label>
+                <input type="text" class="form-control text-dark bg-danger" id="bandName" name="bandName" placeholder="Nickleback">
             </div>
             <div class="mb-3">
-              <label for="songKey" class="form-label">Song Key</label>
-              <input type="text" class="form-control" id="songKey" name="songKey">
+              <label for="songKey" class="form-label text-light h4">Song Key</label>
+              <input type="text" class="form-control text-dark bg-danger" id="songKey" name="songKey" placeholder="Q#">
           </div>
           <div class="mb-3">
-            <label for="BPM" class="form-label">BPM</label>
-            <input type="text" class="form-control" id="BPM" name="BPM">
-        </div>
+            <label for="BPM" class="form-label text-light h4">BPM</label>
+            <input type="text" class="form-control text-dark bg-danger" id="BPM" name="BPM" placeholder="I WANT TO GO FAST">
+        </div >
         <!-- <div class="mb-3">
           <label for="tab" class="form-label">Tab</label>
           <input type="text" class="form-control" id="tab" name="tab">
@@ -43,66 +44,23 @@
                 <label for="imgUpload" class="form-label">Image</label>
                 <input type="file" class="form-control" id="imageUpload" name="file">
               </div> -->
-              <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
+             
+              <button type="submit" class="btn btn-primary text-dark" value="Upload" style="background-color: rgb(255, 234, 0)"><b>Submit</b></button>
+            
             </form>
           </div>
       </div>
-      <div class="col-6">
+      <!-- <div class="col-6">
         <ul class="row list-unstyled">
 
-          <table class="table">
-              
-              <thead>
-                <tr>
-                  <th scope="col">Song Name</th>
-                  <th scope="col">Band Name</th>
-                  <th scope="col">Key</th>
-                  <th scope="col">BPM</th>
-                </tr>
-              </thead>
-        <% for(var i=0; i<posts.length; i++) {%>
-          <li class="col-9 justify-content-between mt-3">
-            <a href="/post/<%= posts[i]._id%>">
-             <!--  <img class="img-fluid" src="<%= posts[i].image%>"> -->
-              <!-- <h2 class="table" ><%= posts[i].songName%></h2>
-              <h2 class="table" ><%= posts[i].bandName%></h2>
-              <h2 class="table" ><%= posts[i].songKey%></h2>
-              <h2 class="table" ><%= posts[i].BPM%></h2> -->
-             <!--  <h2 class="img-fluid" >src="<%= posts[i].tab%>"</h2> -->
-             
-              <tbody>
-                <tr>
-                  <!-- <th scope="row">1</th> -->
-                  <td><%= posts[i].songName%></td>
-                  <td><%= posts[i].bandName%></td>
-                  <td><%= posts[i].songKey%></td>
-                  <td><%= posts[i].BPM%></td>
-                </tr>
-               <!--  <tr>
-                  <th scope="row">2</th>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>@fat</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Larry</td>
-                  <td>the Bird</td>
-                  <td>@twitter</td> -->
-                </tr>
-              </tbody>
-            
-     
-            </a>
-          </li>
-        <% } %>
-      </table>
-        </ul>
-        <div class="row justify-content-center mt-5">
-          <a class="btn btn-primary" href="/feed">Return to Feed</a>
-        </div>  
+         
+        </ul> -->
+        <!-- <div class="row justify-content-center mt-5">
+          <a class="btn btn-primary d-flex justify-content-center" href="/feed">Return to Feed</a>
+        </div>  --> 
       </div>  
     </div>
   </div>
 </div>
 <%- include('partials/footer') -%>
+</body>

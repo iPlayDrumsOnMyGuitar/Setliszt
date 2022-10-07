@@ -1,8 +1,9 @@
+<body class="bg-dark">
 <%- include('partials/logged-in-header') -%>
 <div class="container">
   <div class="row justify-content-center mt-5">
-    <div class="col-6">
-      <table class="table">
+    <h1 class="text-light m-5 d-flex justify-content-center text-uppercase"><%= post.songName%></h1>
+      <table class="table bg-danger h4 pt-5">
         <thead>
           <tr>
             <th scope="col">Song Name</th>
@@ -11,7 +12,7 @@
             <th scope="col">BPM</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody class="h4">
           <tr>
             <!-- <th scope="row">1</th> -->
             <td><%= post.songName%></td>
@@ -27,46 +28,49 @@
       <h2><%= post.tab %></h2> -->
       </table>
       
-      <img class="img-fluid" src="<%= post.image%>" />
-      <div class="row justify-content-between">
+      <!-- <img class="img-fluid" src="<%= post.image%>" /> -->
+      <div class="row justify-content-between mt-5">
         <form
-          class="col-1"
+          class="col-3"
           action="/post/likePost/<%= post.id %>?_method=PUT"
           method="POST"
         >
-          <button class="btn btn-primary fa fa-heart" type="submit"></button>
-        </form>
-        <h3 class="col-3">Likes: <%= post.likes %></h3>
+          <button class="btn btn-primary fa fa-heart p-3" type="submit"></button>
+        </form >
+        
         <%if(post.user == user.id){ %>
         <!-- /added favs -->
         <form
-            class="col justify-content-end"
+            class="col-3"
             action="/post/bookmarkPost/<%= post.id %>?_method=PUT"
             method="POST"
           >
           <button class=" <%if(post.bookmarks.includes(user.id)){ %> bi bi-bookmark-fill<%} else { %> bi bi-bookmark <% }%>
-            btn btn-primary" type="submit"></button>
+            btn btn-primary p-3" type="submit"></button>
           </form>
         
         <!-- delete button -->
           <form
           action="/post/deletePost/<%= post.id %>?_method=DELETE"
           method="POST"
-          class="col-3"
+          class="col-2"
         >
-          <button class="btn btn-primary fa fa-trash" type="submit"></button>
+          <button class="btn btn-primary fa fa-trash p-3" type="submit"></button>
         </form>
         <%}%>
+        
       </div>
+      <h3 class="col-12 h4 text-light p-4">Likes: <%= post.likes %></h3>
     </div>
     <div class="col-3 mt-5">
       <p><%= post.caption %></p>
     </div>
-    <div class="col-6 mt-5">
-      <a class="btn btn-primary" href="/profile">Return to Profile</a>
-      <a class="btn btn-primary" href="/feed">Return to Feed</a>
+    <div class="col-6 mt-5 d-flex justify-content-between">
+      <a class="btn btn-primary text-dark" style="background-color: rgb(255, 234, 0)" href="/profile"><b>Add Another Song</b></a>
+      <a class="btn btn-primary text-dark" style="background-color: rgb(255, 234, 0)" href="/feed"><b>Return to Feed</b></a>
     </div>
-  </div>
+  
 </div>
 
 <%- include('partials/footer') -%>
+</body>

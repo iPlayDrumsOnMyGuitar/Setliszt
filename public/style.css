@@ -550,3 +550,9 @@ video {
   --tw-backdrop-saturate:  ;
   --tw-backdrop-sepia:  ;
 }
+/* 
+// */
+.form-control::placeholder{
+  color: black;
+  opacity: 1;
+}
