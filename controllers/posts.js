@@ -5,7 +5,7 @@ module.exports = {
   getProfile: async (req, res) => {
     try {
       const posts = await Post.find({ user: req.user.id });
-      res.render("profile.ejs", { posts: posts, user: req.user });
+      res.render("add-song.ejs", { posts: posts, user: req.user });
     } catch (err) {
       console.log(err);
     }
@@ -20,8 +20,9 @@ module.exports = {
   },
   getBookmarks: async (req, res) => {
     try {
-      const posts = await Post.find({ user: req.user.id });
-      res.render("favorites.ejs", { posts: posts, user: req.user });
+      const posts = await Post.find({ user: req.user.id }).sort({ timeAdded: "desc" }).lean();
+      
+      res.render("setlist.ejs", { posts: posts, user: req.user });
     } catch (err) {
       console.log(err);
     }
@@ -104,6 +105,7 @@ module.exports = {
       else{
         try{
           await Post.findOneAndUpdate({_id:req.params.id},
+            
             {
               $addToSet : {'bookmarks' : req.user.id}
             })
@@ -120,13 +122,13 @@ module.exports = {
       // Find post by id
       let post = await Post.findById({ _id: req.params.id });
       // Delete image from cloudinary
-      await cloudinary.uploader.destroy(post.cloudinaryId);
+      /* await cloudinary.uploader.destroy(post.cloudinaryId); */
       // Delete post from db
       await Post.remove({ _id: req.params.id });
       console.log("Deleted Post");
-      res.redirect("/profile");
+      res.redirect("/my-songs");
     } catch (err) {
-      res.redirect("/profile");
+      res.redirect("/my-songs");
     }
   },
 };

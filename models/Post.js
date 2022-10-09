@@ -48,6 +48,7 @@ const PostSchema = new mongoose.Schema({
   bookmarks: {
     type: Array,
     required: true,
+    timeAdded: Date.now,
   },
 });
 
