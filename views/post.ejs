@@ -1,7 +1,7 @@
 <body class="bg-dark">
 <%- include('partials/logged-in-header') -%>
-<div class="container">
-  <div class="row justify-content-center mt-5">
+<div class="container mb-5">
+  <div class="row justify-content-center mt-5" mb-5>
     <h1 class="text-light m-5 d-flex justify-content-center text-uppercase"><%= post.songName%></h1>
       <table class="table bg-danger h4 pt-5">
         <thead>
@@ -21,11 +21,6 @@
             <td><%= post.BPM%></td>
           </tr>
           </tbody>
-      <!-- <h2 ><%= post.songName %></h2>
-      <h2><%= post.bandName %></h2>
-      <h2><%= post.songKey %></h2>
-      <h2><%= post.BPM %></h2>
-      <h2><%= post.tab %></h2> -->
       </table>
       
       <!-- <img class="img-fluid" src="<%= post.image%>" /> -->
