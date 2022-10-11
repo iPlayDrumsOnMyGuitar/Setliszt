@@ -552,9 +552,6 @@ video {
 }
 
 
-#foot{
-  background-color: #000000;
-}
 
 * {
   font-family: 'Source Sans Pro', sans-serif;
@@ -652,4 +649,8 @@ tbody {
       }
   }    
 }
+}
+
+#foot{
+  max-height: 1em;
 }
