@@ -1,11 +1,13 @@
  <body class="bg-dark">
 <%- include('partials/logged-in-header') -%>
 
-<div class="container card-container ">
-    <div class="row mt-5 d-flex justify-content-center ">
-    <table class="table bg-danger h3 text-warning border border-white">       
+<div class="container card-container pb-5">
+    <div class="row mt-5  d-flex justify-content-center pb-5">
+    <h1 class='d-flex justify-content-center text-light m-5'>My SetLiszt</h1>
+    <table class="table bg-danger h3 text-warning border border-whit mb-5e">       
     <thead>
       <tr>
+        
         <th scope="col">Song Name</th>
         <th scope="col">Band Name</th>
         <th scope="col">Key</th>
@@ -14,7 +16,7 @@
     </thead>
 
 
-    <h1 class='d-flex justify-content-center text-light m-5'>My SetLiszt</h1>
+    
   <% console.log(posts[0]) %> 
 </div>
   <div class=" row-cols-1 row-cols-md ">
@@ -24,13 +26,14 @@
         <!-- <img src="<%= posts[i].image%>" class="card-img-top" alt="..."> -->
         
             
-        <tbody class="h3">
+        <tbody class="h3" >
           <tr>
             <!-- <th scope="row">1</th> -->
-            <td><%= posts[i].songName%></td>
-            <td><%= posts[i].bandName%></td>
-            <td><%= posts[i].songKey%></td>
-            <td><%= posts[i].BPM%></td>
+            
+            <td class="draggable" draggable="true"><%= posts[i].songName%></td>
+            <td class="draggable" draggable="true"><%= posts[i].bandName%></td>
+            <td class="draggable" draggable="true"><%= posts[i].songKey%></td>
+            <td class="draggable" draggable="true"><%= posts[i].BPM%></td>
           </tr>
          
           </tr>
@@ -42,15 +45,18 @@
           <p class="card-text"><%= posts[i].bandName%></p>
           <a href="/post/<%= posts[i]._id%>" class="btn btn-primary">View Recipe</a> -->
           <!-- <a href="/post/<%= posts[i]._id%>" class="btn btn-primary">Edit</a> -->
-       
-        
-     
+
     <% } %>
     <% } %>
     </table>
   </div>
   
-</div>
+  
 
+  
+</div>
+<div>
+  
+</div>
 </body>
 <%- include('partials/footer') -%>

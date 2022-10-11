@@ -1,6 +1,8 @@
 const cloudinary = require("../middleware/cloudinary");
 const Post = require("../models/Post");
 
+
+
 module.exports = {
   getProfile: async (req, res) => {
     try {
@@ -18,7 +20,7 @@ module.exports = {
       console.log(err);
     }
   },
-  getBookmarks: async (req, res) => {
+  getSetlist: async (req, res) => {
     try {
       const posts = await Post.find({ user: req.user.id }).sort({ timeAdded: "desc" }).lean();
       
@@ -131,4 +133,35 @@ module.exports = {
       res.redirect("/my-songs");
     }
   },
+
+  getAboutUs: async (req, res) => {
+    try {
+      
+      res.render("about-us.ejs");
+    } catch (err) {
+      console.log(err);
+    }
+  },
+
+  getPP: async (req, res) => {
+    try {
+      
+      res.render("pp.ejs");
+    } catch (err) {
+      console.log(err);
+    }
+  },
+
+  getTOS: async (req, res) => {
+    try {
+      
+      res.render("tos.ejs");
+    } catch (err) {
+      console.log(err);
+    }
+  },
+
 };
+
+
+
