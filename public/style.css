@@ -651,6 +651,11 @@ tbody {
 }
 }
 
-#foot{
-  max-height: 1em;
+@media screen {
+  #foot{
+   height: 1em;
+  }
+  .baby{
+    font-size: .25em;
+  }
 }
