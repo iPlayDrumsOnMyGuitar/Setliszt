@@ -1,5 +1,6 @@
 const cloudinary = require("../middleware/cloudinary");
 const Post = require("../models/Post");
+const Setlist = require("../models/Setlist")
 
 
 
@@ -22,7 +23,7 @@ module.exports = {
   },
   getSetlist: async (req, res) => {
     try {
-      const posts = await Post.find({ user: req.user.id }).sort({ timeAdded: "desc" }).lean();
+      const posts = await Post.find({ user: req.user.id }).sort({ position: "desc" }).lean();
       
       res.render("setlist.ejs", { posts: posts, user: req.user });
     } catch (err) {
@@ -40,7 +41,8 @@ module.exports = {
   getPost: async (req, res) => {
     try {
       const post = await Post.findById(req.params.id);
-      res.render("post.ejs", { post: post, user: req.user });
+      const setlist = await Setlist.find({post: req.params.id}).sort({ createdAt: "desc" }).lean();
+      res.render("post.ejs", { post: post, user: req.user, setlist: setlist});
     } catch (err) {
       console.log(err);
     }
@@ -109,7 +111,8 @@ module.exports = {
           await Post.findOneAndUpdate({_id:req.params.id},
             
             {
-              $addToSet : {'bookmarks' : req.user.id}
+              $addToSet : {'bookmarks' : req.user.id},
+              /* $position : -1  */
             })
             
             console.log('Added user to bookmarks array')
@@ -119,6 +122,24 @@ module.exports = {
         }
       }
     },
+
+     bookmarkUp: async (req, res)=>{
+      try {
+        await Post.findOneAndUpdate(
+          { _id: req.params.id },
+          {
+            $inc: { bookmarks: 1 },
+          }
+          );
+          console.log('song moved up in bookmarks array')
+          res.redirect(`back`)
+      }catch(err){
+          console.log(err)
+      }
+    }, 
+
+   
+
   deletePost: async (req, res) => {
     try {
       // Find post by id
@@ -160,6 +181,8 @@ module.exports = {
       console.log(err);
     }
   },
+
+
 
 };
 

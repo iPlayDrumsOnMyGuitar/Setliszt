@@ -15,6 +15,8 @@ router.put("/bookmarkPost/:id", postsController.bookmarkPost)
 
 router.delete("/deletePost/:id", postsController.deletePost);
 
+//
+router.put("/bookmarkUp/:id", postsController.bookmarkUp)
 
 
 module.exports = router;

@@ -2,9 +2,9 @@ const mongoose = require("mongoose");
 
 const SetlistSchema = new mongoose.Schema({
   
-  user: {
+  post: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "User",
+    ref: "Post",
   },
   createdAt: {
     type: Date,
@@ -13,4 +13,4 @@ const SetlistSchema = new mongoose.Schema({
  
 });
 
-module.exports = mongoose.model("Post", PostSchema);
+module.exports = mongoose.model("Setlist", SetlistSchema);

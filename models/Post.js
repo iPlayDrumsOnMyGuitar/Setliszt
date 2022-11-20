@@ -49,6 +49,8 @@ const PostSchema = new mongoose.Schema({
     type: Array,
     required: true,
     timeAdded: Date.now,
+    position: Number,
+    
   },
 });
 

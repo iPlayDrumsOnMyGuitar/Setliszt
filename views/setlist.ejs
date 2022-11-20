@@ -17,7 +17,7 @@
 
 
     
-  <% console.log(posts[0]) %> 
+  <% console.log(setliszt[0]) %> 
 </div>
   <div class=" row-cols-1 row-cols-md ">
     <% for(var i=0; i<posts.length; i++) {%>
@@ -30,13 +30,20 @@
           <tr>
             <!-- <th scope="row">1</th> -->
             
-            <td class="draggable" draggable="true"><%= posts[i].songName%></td>
+            <!-- <td class="draggable" draggable="true"><button class="justify-center fa fa-arrow-up"></button><button class="justify-center fa fa-arrow-down"></button><%= posts[i].songName%></td> -->
+            <td class="draggable" draggable="true"><form
+              class=""
+              action="/post/bookmarkUp/<%= posts.id %>?_method=PUT"
+              method="POST"
+            >
+              <button class="btn btn-primary fa fa-arrow-up p-3" type="submit"></button>
+            </form ><%= posts[i].songName%></td>
             <td class="draggable" draggable="true"><%= posts[i].bandName%></td>
             <td class="draggable" draggable="true"><%= posts[i].songKey%></td>
             <td class="draggable" draggable="true"><%= posts[i].BPM%></td>
           </tr>
          
-          </tr>
+          
         </tbody>
       
    
