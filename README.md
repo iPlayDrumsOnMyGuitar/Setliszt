@@ -53,7 +53,7 @@ bcrypt, connect-mongo, dotenv, ejs, express, express-flash, express-session, mon
   
   ---
   
-# Optimizations
+# Other cool projects like this one
   - [Cloud Sounds](https://github.com/iPlayDrumsOnMyGuitar/cloudSounds)
   - [McRonalds](https://github.com/iPlayDrumsOnMyGuitar/McRonalds)
   
