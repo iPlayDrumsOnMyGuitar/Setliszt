@@ -17,7 +17,7 @@
 
 
     
-  <% console.log(setliszt[0]) %> 
+  
 </div>
   <div class=" row-cols-1 row-cols-md ">
     <% for(var i=0; i<posts.length; i++) {%>
@@ -36,7 +36,7 @@
               action="/post/bookmarkUp/<%= posts.id %>?_method=PUT"
               method="POST"
             >
-              <button class="btn btn-primary fa fa-arrow-up p-3" type="submit"></button>
+             <!--  <button class="btn btn-primary fa fa-arrow-up p-3" type="submit"></button> -->
             </form ><%= posts[i].songName%></td>
             <td class="draggable" draggable="true"><%= posts[i].bandName%></td>
             <td class="draggable" draggable="true"><%= posts[i].songKey%></td>
