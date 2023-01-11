@@ -56,5 +56,4 @@ bcrypt, connect-mongo, dotenv, ejs, express, express-flash, express-session, mon
   - [Cloud Sounds](https://github.com/iPlayDrumsOnMyGuitar/cloudSounds)
   - [Villains Inc](https://github.com/iPlayDrumsOnMyGuitar/villainsINC)
   - [Super Rad](https://github.com/iPlayDrumsOnMyGuitar/superRad)
-  - [McRonalds](https://github.com/iPlayDrumsOnMyGuitar/McRonalds)
   
