@@ -47,6 +47,14 @@ bcrypt, connect-mongo, dotenv, ejs, express, express-flash, express-session, mon
 ---
 
 # Optimizations
-  - Create multiple setlists to add songs to
+  - Create multiple setlists to add songs
   - Be able to rearrange the songs easier on the setlist page
+  - Add a color picker to the setlist page so people can choose how they see the setlist
+
+  ---
+  
+# Other cool projects like this one
+  - [Cloud Sounds](https://github.com/iPlayDrumsOnMyGuitar/cloudSounds)
+  - [Villains Inc](https://github.com/iPlayDrumsOnMyGuitar/villainsINC)
+  - [Super Rad](https://github.com/iPlayDrumsOnMyGuitar/superRad)
   
