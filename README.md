@@ -49,11 +49,12 @@ bcrypt, connect-mongo, dotenv, ejs, express, express-flash, express-session, mon
 # Optimizations
   - Create multiple setlists to add songs to
   - Be able to rearrange the songs easier on the setlist page
-  - Redo the front end in REACT in order to like and comment without interrupting the music that is playing
-  
+
   ---
   
 # Other cool projects like this one
   - [Cloud Sounds](https://github.com/iPlayDrumsOnMyGuitar/cloudSounds)
+  - [Villains Inc](https://github.com/iPlayDrumsOnMyGuitar/villainsINC)
+  - [Super Rad](https://github.com/iPlayDrumsOnMyGuitar/superRad)
   - [McRonalds](https://github.com/iPlayDrumsOnMyGuitar/McRonalds)
   
